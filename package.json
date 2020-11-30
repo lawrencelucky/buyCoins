@@ -1,0 +1,16 @@
+{
+  "name": "buycoins",
+  "version": "1.0.0",
+  "description": "A task given by buycoins",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lawrence",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1"
+  }
+}
