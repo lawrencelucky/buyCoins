@@ -1,6 +1,6 @@
 const repositoryContainer = document.querySelector(".repositories");
 
-const token = "7d7147a429fd229cea9483ae9e0c6928e34474ac";
+const token = "5ba37f86fdd4a1c25ad3048ce7d299b3c1ac5f79";
 // let repos = [];
 // const reposArr = [];
 
