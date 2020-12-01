@@ -1,10 +1,8 @@
-const moment = require("moment");
-
 const repositoryContainer = document.querySelector(".repositories");
 
-const token = "aa9d45ccfbb931d7e94f679e1311c7c4f0c1f65b";
-let repos = [];
-const reposArr = [];
+const token = "7d7147a429fd229cea9483ae9e0c6928e34474ac";
+// let repos = [];
+// const reposArr = [];
 
 const body = {
   query: `
@@ -61,29 +59,30 @@ fetch(baseUrl, {
 })
   .then((response) => response.json())
   .then((result) => {
+    console.log(result);
     result.data.viewer.repositories.nodes.forEach((repo) => {
       const time = repo.updatedAt.toString().slice(0, 10).replaceAll("-", "");
-      console.log(moment(time).startOf("day").fromNow());
+      const updatedAt = moment(time).startOf("day").fromNow();
       repositoryContainer.insertAdjacentHTML(
         "beforeend",
         `
-    <div class="repository">
-        <div class="repository__left">
-            <a href="#" class="repository__name">${repo.name}</a>
-            <div class="repository__details">
-                <p class="language">${
-                  repo.primaryLanguage === null
-                    ? "No Language"
-                    : repo.primaryLanguage.name
-                }</p>
-                <p class="time__updated">Updated 2 hours ago</p>
+        <div class="repository">
+            <div class="repository__left">
+                <a href="#" class="repository__name">${repo.name}</a>
+                <div class="repository__details">
+                    <p class="language">${
+                      repo.primaryLanguage === null
+                        ? "No Language"
+                        : repo.primaryLanguage.name
+                    }</p>
+                    <p class="time__updated">Updated ${updatedAt}</p>
+                </div>
+            </div>
+            <div class="repository__right">
+                <button class="repository__btn">Star</button>
             </div>
         </div>
-        <div class="repository__right">
-            <button class="repository__btn">Star</button>
-        </div>
-    </div>
-`
+    `
       );
     });
   });

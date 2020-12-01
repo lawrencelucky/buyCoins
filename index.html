@@ -66,14 +66,16 @@
       <div class="body__section--content">
         <div class="body__section--info">
           <img src="./assets/profile.png" alt="" class="avatar" />
-          <div class="displayName">
-            <h1>Lawrence Lucky</h1>
-          </div>
-          <div class="username">
-            <h3>lawrencelucky</h3>
-          </div>
-          <div class="skill">
-            <p>Frontend Web Developer</p>
+          <div class="avatar-content">
+            <div class="displayName">
+              <h1>Lawrence Lucky</h1>
+            </div>
+            <div class="username">
+              <h3>lawrencelucky</h3>
+            </div>
+            <div class="skill">
+              <p>Frontend Web Developer</p>
+            </div>
           </div>
         </div>
 
@@ -91,19 +93,22 @@
 
           <div class="section__left--header">
             <input type="text" placeholder="Find a repository..." />
-            <select class="header__section">
-              <option value="">Type: All</option>
-            </select>
-            <select class="header__section">
-              <option value="">Language: All</option>
-            </select>
-            <button class="header__btn">New</button>
+            <div class="buttons">
+              <select class="header__section">
+                <option value="">Type: All</option>
+              </select>
+              <select class="header__section">
+                <option value="">Language: All</option>
+              </select>
+              <button class="header__btn">New</button>
+            </div>
           </div>
 
           <div class="repositories"></div>
         </div>
       </div>
     </section>
+    <script src="./moment.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
